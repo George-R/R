@@ -404,3 +404,48 @@ load("R.rdata")
 n
 
 require(ggplot2)
+data(diamonds)
+head(diamonds)
+
+data(WorldPhones)
+head(WorldPhones)
+
+require(XML)
+theURL <- "http://www.jaredlander.com/2012/02/another-kind-of-super-bowl-pool/"
+bowlPool <- readHTMLTable(theURL, which = 1, header = FALSE, stringAsFactors = FALSE)
+bowlPool
+
+
+df1 <- data.frame (1:4, rep(3,4), c(2,4,1,5))
+df1
+
+colnames(df1)
+colnames(df1) <- c("c1", "c2", "c3")
+df1
+
+df1[2:3, 2:3]
+
+df1[2:3, c("c2", ("c3"))]
+df1[c(1,3), "c3" ]
+df1$c3[c(1,3)]
+
+df1 <- cbind(df1,c("truck","car","lettuce","porkchop"))
+colnames(df1)[4] <- "things"
+df1
+
+str(df1)
+
+df1$things <- as.character(df1)
+str(df1)
+
+View(df1)
+
+landerfile <- read.table(file="http://www.jaredlander.com/data/Tomato%20First.csv",
+                         header=TRUE,sep=",",stringsAsFactors=FALSE)
+head(landerfile)
+landerfile[1:5, 1:5]
+
+newdf <- read.table(file="testdata.csv",header=TRUE,sep=",",stringsAsFactors=FALSE)
+newdf
+
+df1
