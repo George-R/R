@@ -361,3 +361,46 @@ theArray
 theArray[1, ,]
 theArray[1, , 1]
 theArray[, , 1]
+
+theUrl <- "tomato.csv"
+tomato <-read.table (file = theUrl, header = TRUE, sep = ",")
+head(tomato)
+
+x <- 10:1
+y <- -4.5
+q <- c("Hockey", "Football", "Baseball", "Curling", "Rugby", "Lacrosse", "Basketball", "Tennis", "Cricket", "SOccer")
+theDF <- data.frame (First=x, Second = y, Sport = q,stringsAsFactors = FALSE)
+theDF$Sport
+
+
+head(ordersTable)
+
+#save the tomato data.frame to disk
+save(tomato, file = "R.rdata")
+
+#remove tomato from memory
+rm(tomato)
+#check if it still exists 
+head(tomato)
+
+#load it from the rdata file
+load("R.rdata")
+head(tomato)
+
+#create some objects
+n <- 20
+r <- 1:10
+w <- data.frame(n,r)
+n
+r
+w
+
+save(n, r, w, file = "R.rdata")
+rm(n, r, w)
+n
+r
+w
+load("R.rdata")
+n
+
+require(ggplot2)
